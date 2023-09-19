@@ -62,7 +62,7 @@ try:
     # trap the packets
     print("[+] Script is running...")
     queue = NetfilterQueue()
-    queue.bind(queue_num=7, user_callback=process_packet)
+    queue.bind(queue_num=int(args().queue_num), user_callback=process_packet)
     queue.run()
 except KeyboardInterrupt:
     print("\n[*] Detected 'ctrl + c' pressed, program terminated.")
